@@ -11,6 +11,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "postinstall": "flow-typed install"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.77.0",
+    "flow-typed": "^2.5.1",
+    "jest": "23.4.2",
+    "jest-cli": "23.4.2"
   }
 }
