@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-type Props = {};
+type AppProps = {};
+type AppState = {};
 
-class App extends Component<Props> {
+class App extends Component<AppProps, AppState> {
   render() {
     return (
       <div className="App">
