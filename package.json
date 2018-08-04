@@ -14,9 +14,18 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "flow-watch": "fswatch -o ./ | xargs -n1 -I{} sh -c 'clear; printf \"\\033[3J\" && flow'",
+    "eslint": "eslint --ext .js --ext .test.js src/",
+    "eslint-watch": "fswatch -o ./ -e '.*' -i '\\.js$' | xargs -n1 -I{} sh -c 'clear; printf \"\\033[3J\" && yarn run eslint'",
     "postinstall": "flow-typed install"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
     "flow-bin": "^0.77.0",
     "flow-typed": "^2.5.1",
     "jest": "23.4.2",
