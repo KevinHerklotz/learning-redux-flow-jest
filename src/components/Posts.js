@@ -26,10 +26,9 @@ class Posts extends Component<PostsProps, PostsState> {
   }
 
   render() {
-    // console.log(this.state.posts.map(x => x.id));
     const postItems = this.state.posts.map(post => (
       <article key={post.id}>
-        <h3>{post.title}</h3>
+        <h3>{post.id}. {post.title}</h3>
         <p>{post.body}</p>
       </article>
     ));
