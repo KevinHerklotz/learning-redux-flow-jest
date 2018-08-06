@@ -6,8 +6,15 @@ const initialState = {
   item: {},
 };
 
-export default function (state:Object = initialState, action:{type:string}) {
+type Action = {type:string, payload:any}
+
+export default function (state:Object = initialState, action:Action) {
   switch (action.type) {
+    case FETCH_POSTS:
+      return {
+        ...state,
+        items: action.payload,
+      };
     default:
       return state;
   }
