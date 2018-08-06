@@ -10,12 +10,19 @@ type Post = {
 };
 type PostsProps = {
   fetchPosts: Function,
-  posts: Array<Post>
+  posts: Array<Post>,
+  newPost: Post,
 };
 
 class Posts extends Component<PostsProps> {
   componentWillMount() {
     this.props.fetchPosts();
+  }
+
+  componentWillReceiveProps(nextProps:{newPost:Post}) {
+    if (nextProps.newPost) {
+      this.props.posts.unshift(nextProps.newPost);
+    }
   }
 
   render() {
@@ -37,6 +44,7 @@ class Posts extends Component<PostsProps> {
 
 const mapStateToProps = state => ({
   posts: state.posts.items,
+  newPost: state.posts.item,
 });
 
 export default connect(mapStateToProps, { fetchPosts })(Posts);

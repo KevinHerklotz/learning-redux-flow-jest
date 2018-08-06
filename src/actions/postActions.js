@@ -11,7 +11,7 @@ export function fetchPosts() {
   };
 }
 
-export function createPost(postData:Object) {
+export function createPost(postData:{title:string, body:string}) {
   return (dispatch:Function) => {
     fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
